@@ -1,0 +1,191 @@
+#Environment Data read and precoss
+library(raster)
+
+#Read environment data
+#Bioclimatic variable
+BIO1<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO1.tif")
+BIO2<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO2.tif")
+BIO3<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO3.tif")
+BIO4<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO4.tif")
+BIO5<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO5.tif")
+BIO6<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO6.tif")
+BIO7<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO7.tif")
+BIO8<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO8.tif")
+BIO9<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO9.tif")
+BIO10<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO10.tif")
+BIO11<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO11.tif")
+BIO12<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO12.tif")
+BIO13<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO13.tif")
+BIO14<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO14.tif")
+BIO15<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO15.tif")
+BIO16<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO16.tif")
+BIO17<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO17.tif")
+BIO18<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO18.tif")
+BIO19<-raster("~/Hosky/ECE_Revision/Environment_Data/Climate_Current/BIO19.tif")
+
+#Soil data
+T1_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_USDA_TEX_CLASS.tif")
+T1_2.5m<-aggregate(T1_30s,fact=5,fun=mean)
+writeRaster(T1_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T1_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T1<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T1_2.5m.tif")
+
+T2_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_TEXTURE.tif")
+T2_2.5m<-aggregate(T2_30s,fact=5,fun=mean)
+writeRaster(T2_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T2_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T2<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T2_2.5m.tif")
+
+T3_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_TEB.tif")
+T3_2.5m<-aggregate(T3_30s,fact=5,fun=mean)
+writeRaster(T3_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T3_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T3<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T3_2.5m.tif")
+
+T4_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_SILT.tif")
+T4_2.5m<-aggregate(T4_30s,fact=5,fun=mean)
+writeRaster(T4_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T4_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T4<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T4_2.5m.tif")
+
+T5_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_SAND.tif")
+T5_2.5m<-aggregate(T5_30s,fact=5,fun=mean)
+writeRaster(T5_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T5_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T5<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T5_2.5m.tif")
+
+T6_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_PH_H2O.tif")
+T6_2.5m<-aggregate(T6_30s,fact=5,fun=mean)
+writeRaster(T6_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T6_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T6<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T6_2.5m.tif")
+
+T7_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_OC.tif")
+T7_2.5m<-aggregate(T7_30s,fact=5,fun=mean)
+writeRaster(T7_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T7_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T7<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T7_2.5m.tif")
+
+T8_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_GRAVEL.tif")
+T8_2.5m<-aggregate(T8_30s,fact=5,fun=mean)
+writeRaster(T8_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T8_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T8<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T8_2.5m.tif")
+
+T9_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_ESP.tif")
+T9_2.5m<-aggregate(T9_30s,fact=5,fun=mean)
+writeRaster(T9_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T9_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T9<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T9_2.5m.tif")
+
+T10_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_ECE.tif")
+T10_2.5m<-aggregate(T10_30s,fact=5,fun=mean)
+writeRaster(T10_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T10_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T10<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T10_2.5m.tif")
+
+T11_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_CLAY.tif")
+T11_2.5m<-aggregate(T11_30s,fact=5,fun=mean)
+writeRaster(T11_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T11_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T11<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T11_2.5m.tif")
+
+T12_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_CEC_SOIL.tif")
+T12_2.5m<-aggregate(T12_30s,fact=5,fun=mean)
+writeRaster(T12_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T12_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T12<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T2_2.5m.tif")
+
+T13_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_CEC_CLAY.tif")
+T13_2.5m<-aggregate(T13_30s,fact=5,fun=mean)
+writeRaster(T13_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T13_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T13<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T13_2.5m.tif")
+
+T14_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_CASO4.tif")
+T14_2.5m<-aggregate(T14_30s,fact=5,fun=mean)
+writeRaster(T14_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T14_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T14<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T14_2.5m.tif")
+
+T15_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_CACO3.tif")
+T15_2.5m<-aggregate(T15_30s,fact=5,fun=mean)
+writeRaster(T15_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T15_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T15<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T15_2.5m.tif")
+
+T16_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_BS.tif")
+T16_2.5m<-aggregate(T16_30s,fact=5,fun=mean)
+writeRaster(T16_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T16_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T16<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T16_2.5m.tif")
+
+T17_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_REF_BULK_DENSITY.tif")
+T17_2.5m<-aggregate(T17_30s,fact=5,fun=mean)
+writeRaster(T17_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T17_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T17<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T17_2.5m.tif")
+
+T18_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T_BULK_DENSITY.tif")
+T18_2.5m<-aggregate(T18_30s,fact=5,fun=mean)
+writeRaster(T18_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Soil/T18_2.5m.tif"), format="GTiff", overwrite=TRUE)
+T18<-raster("~/Hosky/ECE_Revision/Environment_Data/Soil/T18_2.5m.tif")
+
+rm(T1_30s,T2_30s,T3_30s,T4_30s,T5_30s,T6_30s,T7_30s,T8_30s,T9_30s,T10_30s,
+   T11_30s,T12_30s,T13_30s,T14_30s,T15_30s,T16_30s,T17_30s,T18_30s,
+   T1_2.5m,T2_2.5m,T3_2.5m,T4_2.5m,T5_2.5m,T6_2.5m,T7_2.5m,T8_2.5m,T9_2.5m,T10_2.5m,
+   T11_2.5m,T12_2.5m,T13_2.5m,T14_2.5m,T15_2.5m,T16_2.5m,T17_2.5m,T18_2.5m)
+
+#Elevation data, calculated aspect.slope_mean.slope_max.roughness
+ELE_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/30s_elev.tif")
+ELE_2.5m<-aggregate(ELE_30s,fact=5,fun=mean)
+writeRaster(ELE_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Elevation/ELE_2.5m.tif"), format="GTiff", overwrite=TRUE)
+ELE<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/ELE_2.5m.tif")
+#Roughness is the difference between the maximum and the minimum value of a cell and its 24 surrounding cells(5*5).
+#TPI (Topographic Position Index) is the difference between the value of a cell and the mean value of its 25 surrounding cells.
+#ELE_2.5m_max<-aggregate(ELE_30s,fact=5,fun=max)
+#ELE_2.5m_min<-aggregate(ELE_30s,fact=5,fun=min)
+#Roughness<-ELE_2.5m_max-ELE_2.5m_min
+Roughness<-aggregate(ELE_30s,fact=5,fun=max)-aggregate(ELE_30s,fact=5,fun=min)
+writeRaster(Roughness, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Elevation/Roughness.tif"), format="GTiff", overwrite=TRUE)
+Roughness<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/Roughness.tif")
+tpiw <- function(x, w=5) {
+  m <- matrix(1/(w^2-1), nc=w, nr=w)
+  m[ceiling(0.5 * length(m))] <- 0
+  f <- focal(x, m)
+  x - f
+}
+TPI<-tpiw(ELE_2.5m, w=5)
+writeRaster(TPI, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Elevation/TPI.tif"), format="GTiff", overwrite=TRUE)
+TPI<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/TPI.tif")
+
+Slope_30s<-terrain(ELE_30s, opt="slope") 
+Slope_2.5m_mean<-aggregate(Slope_30s,fact=5,fun=mean)
+writeRaster(Slope_2.5m_mean, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Elevation/Slope_2.5m_mean.tif"), format="GTiff", overwrite=TRUE)
+Slope<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/Slope_2.5m_mean.tif")
+
+Slope_2.5m_roughness<-aggregate(Slope_30s,fact=5,fun=max)-aggregate(Slope_30s,fact=5,fun=min)
+writeRaster(Slope_2.5m_roughness, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Elevation/Slope_2.5m_roughness.tif"), format="GTiff", overwrite=TRUE)
+Slope_roughness<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/Slope_2.5m_roughness.tif")
+
+Aspect_30s<-terrain(ELE_30s, opt="aspect")
+Aspect_2.5m<-aggregate(Aspect_30s,fact=5,fun=mean)
+writeRaster(Aspect_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Elevation/Aspect_2.5m.tif"), format="GTiff", overwrite=TRUE)
+Aspect<-raster("~/Hosky/ECE_Revision/Environment_Data/Elevation/Aspect_2.5m.tif")
+
+rm(tpiw)
+rm(ELE_30s,ELE_2.5m,Aspect_30s,Aspect_2.5m,Slope_30s,Slope_2.5m_roughness,Slope_2.5m_mean)
+
+ETO_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Global_AI_ET0_annual/et0_v3_yr.tif")
+ETO_2.5m<-aggregate(ETO_30s,fact=5,fun=mean)
+writeRaster(ETO_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Global_AI_ET0_annual/ETO_2.5m.tif"), format="GTiff", overwrite=TRUE)
+ETO<-raster("~/Hosky/ECE_Revision/Environment_Data/Global_AI_ET0_annual/ETO_2.5m.tif")
+
+AI_30s<-raster("~/Hosky/ECE_Revision/Environment_Data/Global_AI_ET0_annual/ai_v3_yr.tif")
+AI_2.5m<-aggregate(AI_30s,fact=5,fun=mean)
+writeRaster(AI_2.5m, filename=file.path("~/Hosky/ECE_Revision/Environment_Data/Global_AI_ET0_annual/AI_2.5m.tif"), format="GTiff", overwrite=TRUE)
+AI<-raster("~/Hosky/ECE_Revision/Environment_Data/Global_AI_ET0_annual/AI_2.5m.tif")
+
+rm(ETO_30s,ETO_2.5m,AI_30s,AI_2.5m)
+
+Env_Var<-stack(BIO1,BIO2,BIO3,BIO4,BIO5,BIO6,BIO7,BIO8,BIO9,BIO10,
+               BIO11,BIO12,BIO13,BIO14,BIO15,BIO16,BIO17,BIO18,BIO19,
+               T1,T2,T3,T4,T5,T6,
+               T7,T8,T9,T10,T11,T12,
+               T13,T14,T15,T16,T17,T18,
+               ELE,Roughness,TPI,Slope,Slope_roughness,
+               Aspect,ETO,AI)
+names(Env_Var)<-c("BIO1","BIO2","BIO3","BIO4","BIO5","BIO6","BIO7","BIO8","BIO9","BIO10",
+                  "BIO11","BIO12","BIO13","BIO14","BIO15","BIO16","BIO17","BIO18","BIO19",
+                  "T1","T2","T3","T4","T5","T6",
+                  "T7","T8","T9","T10","T11","T12",
+                  "T13","T14","T15","T16","T17","T18",
+                  "ELE","Roughness","TPI","Slope_mean","Slope_roughness",
+                  "Aspect","ETO","AI")
+
+res(Env_Var)
+
+save.image("~/Hosky/ECE_Revision/Environment_Data/Environment_Data.RData")
